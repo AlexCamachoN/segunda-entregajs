@@ -1,0 +1,16 @@
+
+
+nav img{
+   height: 50px;
+}
+
+@mixin sizes($width, $height) {
+   height: $height;
+   width: $width;
+}
+.box {
+   @include sizes(500px, 50px);
+}
+
+.bodyimg {
+   height: 3vh}

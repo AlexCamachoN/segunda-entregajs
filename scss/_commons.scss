@@ -1,0 +1,82 @@
+// variables 
+$bg-warning:#EDAD13;
+$bg-success:#36F328;
+$bg-info:#3ABFDC;
+
+$width:100%;
+$height:400px;
+
+$lang:frejol50;
+
+// body{
+// 	overflow-x: hidden;
+// }
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 1px rgb(0, 0, 0 / 8%);
+    box-shadow: inset 0 1px 1px rgb(0, 0, 0 / 8%);
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+.form-group{
+    margin-bottom: 33px;
+}
+
+
+
+.exposiciones{
+ 	width: ($width - 2%) / 2;
+ 	height: $height - 80;
+ 	background-color: grey;
+
+
+ }
+
+
+
+@for $i from 1 through 6{
+		h#{$i}{
+		font-size: 1em *$i;
+	}
+}
+
+@each $icono in bodegonc, abstracto1obra, campesina{
+	.#{$icono}-icon{
+		background-image:url(../img/#{$icono}.jpg);
+		width: 50px;
+		height: 50px;
+	 	background-size:100%;
+	 	list-style: none;
+	 }
+}
+
+
+ $colors:(
+ 	uno:red, 
+	dos:green, 
+ 	tres:blue, 
+ 	cuatro:black);
+
+ @each $name-color, $bg-color in $colors{
+ 	.circle-#{$name-color}{
+ 		background-color:$bg-color;
+		width: 150px;
+ 		height: 150px;
+ 		border-radius: 50%;
+ 	}
+ }
+
+ 

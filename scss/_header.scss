@@ -1,0 +1,98 @@
+//header de index-porque en responsive deja bastante espacio?
+
+#headerHome{
+	height: 110vh
+}
+
+//header de obrashtml
+.headerobras{
+	background: url(../img/frejole.jpg) top center;
+	height: 30vh;
+	display: flex;
+	
+}
+
+@media only screen and (min-width: 992px){
+	#headerHome{
+		height: 60vh
+	}
+	.headerobras{
+		height: 50vh;
+		background: url(../img/frejol.jpeg) top center;
+	}
+}
+
+	header article{
+		display: flex;
+		flex-direction: column-reverse;
+		text-align: center;
+	}
+
+	header img{
+		width: 80%;
+		margin-top: 10px;
+		margin-bottom: 10px;
+		border-radius: 10px;
+		box-shadow: -3px 5px 6px 8px rgba(0,0,0,0.75);
+		-webkit-box-shadow: -3px 5px 6px 8px rgba(0,0,0,0.75);
+		-moz-box-shadow: -3px 5px 6px 8px rgba(0,0,0,0.75);
+	}
+.transform:hover{
+	transform: translate(10px, 20px);
+	cursor: pointer;
+	transition: transform 2s;
+}
+
+//header de reconocimientos html
+.ipcnapremio{
+	height: 80vh;
+	display: flex;
+	justify-content: center;
+	background: url(../img/ipcna4.jpg) top center;
+	background-size: cover;
+}
+
+@media only screen and (min-width: 992px){
+	header{
+		height: 70vh;
+	}
+}
+
+//header de contacto html
+.headercontacto{
+	height: 30vh;
+	background: url(../img/manzanam.jpg) top center;
+	background-size: cover;
+}
+
+@media only screen and (min-width: 992px){
+	.headercontacto{
+		height: 100vh;
+
+	}
+}
+
+//header de exposiciones html
+.headerexposiciones{
+	height: 30vh;
+	background: url(../img/campesinae.jpg) top center;
+	background-size: cover;
+}
+
+@media only screen and (min-width: 992px){
+	.headerexposiciones{
+		height: 70vh;
+	}
+}
+
+section img{
+	border-radius: 10px;
+}
+
+.scale:hover{
+	transform: scale(1.2);
+	cursor: pointer;
+	transition: transform 2s;
+}
+
+

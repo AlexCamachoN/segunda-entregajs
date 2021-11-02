@@ -1,0 +1,39 @@
+
+
+hr{
+	color: aqua;
+}
+
+#footerletra{
+	font-size: 5em;
+}
+
+//boton flotante de wsa
+.boton-whatsapp {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+}
+
+.footer__links {
+	display: flex;
+	justify-content: center;
+	height: 4vh;
+
+	a {
+		width: 10%;
+	}
+
+	img {
+		height: 40px;
+	}
+}
+@media screen and (max-width: 580px) {
+
+    .footer__links {
+        justify-content: space-around;
+    }
+
+    
+
+}

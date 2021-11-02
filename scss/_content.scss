@@ -1,0 +1,98 @@
+$bg-light:#3E3243;
+$bg-dark:#03685B;
+
+.htmlh1{
+	font-size: 1em;
+}
+
+
+
+.card-body{
+	h5{
+	font-size: 1.3em;
+	}
+}
+
+
+#retratocarboncillo{
+	font-size: 2em;
+}
+
+
+
+.obras h3{
+	font-size: 1.3em;
+}
+
+
+.cosechabox_text--white{
+	color: white;
+
+}
+
+.pinturabox{
+	background-color:$bg-light;
+	display: flex;
+	flex-direction: column;
+	padding:20px;
+}
+
+.pinturabox__title--light{
+	font-size: 1.3em;
+	text-align: center;
+	color: white;
+}
+
+.pinturabox__text--white{
+	color: white;
+	font-size: 1.2em;
+	line-height: 1.4em;
+	text-align: center;
+}
+
+// reconocimientos
+.premio{
+	background-color:$bg-dark;
+	display: flex;
+	flex-direction: column;
+	padding:20px;
+}
+
+.premio__title--dark{
+	font-size: 2em;
+	text-align: center;
+	color: white;
+}
+
+.premio__text--white{
+	color: white;
+	font-size: 1.2em;
+	line-height: 1.4em;
+	text-align: center;
+}
+
+@mixin sizes($width, $height) {
+   height: $height;
+   width: $width;
+}
+.box {
+   @include sizes(500px, 50px);
+}
+
+
+@media screen and (max-width: 580px) {
+
+    #exposiciont {
+
+
+
+        font-size: 1em;
+
+
+
+    }
+	
+
+    
+
+}

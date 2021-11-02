@@ -1,0 +1,261 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap");
+* {
+  margin: 0;
+  padding: 0; }
+
+.textMedium {
+  font-size: 1.2em; }
+
+.textBig {
+  font-size: 2em; }
+
+.textSmall {
+  font-size: 0.7em; }
+
+nav img {
+  height: 50px; }
+
+.box {
+  height: 50px;
+  width: 500px; }
+
+.bodyimg {
+  height: 3vh; }
+
+.htmlh1 {
+  font-size: 5em; }
+
+.card-body h5 {
+  font-size: 1.3em; }
+
+#retratocarboncillo {
+  font-size: 2em; }
+
+.obras h3 {
+  font-size: 1.3em; }
+
+.exposiciones {
+  font-size: 3em; }
+
+.cosechabox_text--white {
+  color: white; }
+
+.pinturabox {
+  background-color: #3E3243;
+  display: flex;
+  flex-direction: column;
+  padding: 20px; }
+
+.pinturabox__title--light {
+  font-size: 1.3em;
+  text-align: center;
+  color: white; }
+
+.pinturabox__text--white {
+  color: white;
+  font-size: 1.2em;
+  line-height: 1.4em;
+  text-align: center; }
+
+.premio {
+  background-color: #03685B;
+  display: flex;
+  flex-direction: column;
+  padding: 20px; }
+
+.premio__title--dark {
+  font-size: 2em;
+  text-align: center;
+  color: white; }
+
+.premio__text--white {
+  color: white;
+  font-size: 1.2em;
+  line-height: 1.4em;
+  text-align: center; }
+
+.box {
+  height: 50px;
+  width: 500px; }
+
+.form-control {
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px black;
+  box-shadow: inset 0 1px 1px black;
+  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s; }
+
+.form-group {
+  margin-bottom: 33px; }
+
+.exposiciones {
+  width: 49%;
+  height: 320px;
+  background-color: grey; }
+
+.icon-lang {
+  width: 200px;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  background-image: url(../img/frejol50.jpg); }
+
+h1 {
+  font-size: 1em; }
+
+h2 {
+  font-size: 2em; }
+
+h3 {
+  font-size: 3em; }
+
+h4 {
+  font-size: 4em; }
+
+h5 {
+  font-size: 5em; }
+
+h6 {
+  font-size: 6em; }
+
+.bodegonc-icon {
+  background-image: url(../img/bodegonc.jpg);
+  width: 50px;
+  height: 50px;
+  background-size: 100%;
+  list-style: none; }
+
+.abstracto1obra-icon {
+  background-image: url(../img/abstracto1obra.jpg);
+  width: 50px;
+  height: 50px;
+  background-size: 100%;
+  list-style: none; }
+
+.campesina-icon {
+  background-image: url(../img/campesina.jpg);
+  width: 50px;
+  height: 50px;
+  background-size: 100%;
+  list-style: none; }
+
+.circle-uno {
+  background-color: red;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%; }
+
+.circle-dos {
+  background-color: green;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%; }
+
+.circle-tres {
+  background-color: blue;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%; }
+
+.circle-cuatro {
+  background-color: black;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%; }
+
+#headerHome {
+  height: 120vh; }
+
+.headerobras {
+  background: url(../img/frejole.jpg) top center;
+  height: 30vh;
+  display: flex; }
+
+@media only screen and (min-width: 992px) {
+  .headerobras {
+    height: 50vh;
+    background: url(../img/frejol.jpeg) top center; } }
+
+header article {
+  display: flex;
+  flex-direction: column-reverse;
+  text-align: center; }
+
+header img {
+  width: 80%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  box-shadow: -3px 5px 6px 8px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: -3px 5px 6px 8px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -3px 5px 6px 8px rgba(0, 0, 0, 0.75); }
+
+.transform:hover {
+  transform: translate(10px, 20px);
+  cursor: pointer;
+  transition: transform 2s; }
+
+.ipcnapremio {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  background: url(../img/ipcna4.jpg) top center;
+  background-size: cover; }
+
+@media only screen and (min-width: 992px) {
+  header {
+    height: 70vh; } }
+
+.headercontacto {
+  height: 30vh;
+  background: url(../img/manzanam.jpg) top center;
+  background-size: cover; }
+
+@media only screen and (min-width: 992px) {
+  .headercontacto {
+    height: 100vh; } }
+
+.headerexposiciones {
+  height: 30vh;
+  background: url(../img/campesinae.jpg) top center;
+  background-size: cover; }
+
+@media only screen and (min-width: 992px) {
+  .headerexposiciones {
+    height: 70vh; } }
+
+section img {
+  border-radius: 10px; }
+
+.scale:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+  transition: transform 2s; }
+
+hr {
+  color: aqua; }
+
+.boton-whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px; }
+
+.footer__links {
+  display: flex;
+  justify-content: center;
+  height: 4vh; }
+  .footer__links a {
+    width: 10%; }
+  .footer__links img {
+    height: 40px; }
