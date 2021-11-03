@@ -1,98 +1,50 @@
 //header de index-porque en responsive deja bastante espacio?
 
-#headerHome{
-	height: 110vh
+/*estilos generales*/
+
+* {
+    font-family: openSansCustom;
+    background-color: darkgray;
 }
 
-//header de obrashtml
-.headerobras{
-	background: url(../img/frejole.jpg) top center;
-	height: 30vh;
-	display: flex;
-	
+#formulario {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid gray;
+    width: 260px;
+    height: 205px;
+    margin: 5px;
+    background-color: #DAF7A6;
 }
 
-@media only screen and (min-width: 992px){
-	#headerHome{
-		height: 60vh
-	}
-	.headerobras{
-		height: 50vh;
-		background: url(../img/frejol.jpeg) top center;
-	}
+#formulario label {
+    background-color: #DAF7A6;
 }
 
-	header article{
-		display: flex;
-		flex-direction: column-reverse;
-		text-align: center;
-	}
-
-	header img{
-		width: 80%;
-		margin-top: 10px;
-		margin-bottom: 10px;
-		border-radius: 10px;
-		box-shadow: -3px 5px 6px 8px rgba(0,0,0,0.75);
-		-webkit-box-shadow: -3px 5px 6px 8px rgba(0,0,0,0.75);
-		-moz-box-shadow: -3px 5px 6px 8px rgba(0,0,0,0.75);
-	}
-.transform:hover{
-	transform: translate(10px, 20px);
-	cursor: pointer;
-	transition: transform 2s;
+.iText {
+    background-color: whitesmoke;
 }
 
-//header de reconocimientos html
-.ipcnapremio{
-	height: 80vh;
-	display: flex;
-	justify-content: center;
-	background: url(../img/ipcna4.jpg) top center;
-	background-size: cover;
+#botones {
+    background-color: #DAF7A6;
 }
 
-@media only screen and (min-width: 992px){
-	header{
-		height: 70vh;
-	}
+#btnSubmit,
+#btnMostrar {
+    margin-top: 25px;
+    width: 90px;
+    height: 30px;
 }
 
-//header de contacto html
-.headercontacto{
-	height: 30vh;
-	background: url(../img/manzanam.jpg) top center;
-	background-size: cover;
+#containerPrincipal {
+    display: flex;
+    flex-direction: row;
 }
 
-@media only screen and (min-width: 992px){
-	.headercontacto{
-		height: 100vh;
-
-	}
+#displayTodos,
+#displayTodos p,
+#displayTodos strong,
+#displayTodos h3 {
+    background-color: #DAF7A6;
+    margin: 5px;
 }
-
-//header de exposiciones html
-.headerexposiciones{
-	height: 30vh;
-	background: url(../img/campesinae.jpg) top center;
-	background-size: cover;
-}
-
-@media only screen and (min-width: 992px){
-	.headerexposiciones{
-		height: 70vh;
-	}
-}
-
-section img{
-	border-radius: 10px;
-}
-
-.scale:hover{
-	transform: scale(1.2);
-	cursor: pointer;
-	transition: transform 2s;
-}
-
-
