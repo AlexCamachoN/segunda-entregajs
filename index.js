@@ -23,6 +23,37 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+//boton ver obras con liquidacion
+// document.querySelector('#liquid').addEventListener('click', function() {
+//     datoLiqui();
+// })
+
+
+
+
+//--------------------APLICANDO AJAX CON JSON LOCAL-----------------------
+// function datoLiqui() {
+//     console.log('quieres ver obras en liquidacion');
+const miJSON = "liquidacion.json";
+$("#liquid").prepend('<button class="btn-warning " id="miBoton">obras liquidacion al 80%</button>');
+$("#miBoton").click(() => {
+    $.getJSON(miJSON, function(respuesta, estado) {
+        if (estado == "success") {
+            let misObras = respuesta.liquidacion;
+            for (const obra of misObras) {
+                $("#liquid").append(`<div>
+                <h2>APROVECHA LIQUIDACIONES</h2>
+                <h3>${obra.nombre}</h3>
+                <p>${obra.precioliquidacion}</p>
+                <img src=${obra.foto} width="250" height="250">
+                <img>${obra.foto}</img>
+                </div>`);
+            }
+        }
+    });
+});
+// }
+
 
 //el e sirve para capturar el evento que se quiere modificar con addEventlistener
 cards.addEventListener('click', e => { //los cards que estan en html detectan el click
@@ -58,6 +89,7 @@ const pintarCards = data => {
         fragment.appendChild(clone)
     });
     cards.appendChild(fragment)
+
 }
 
 
@@ -89,6 +121,8 @@ const setCarrito = objeto => { //cuando se va seleccionando esta funcion va empu
 
     // console.log(producto)
 }
+
+
 
 //----PINTAR CARRITO--
 const pintarCarrito = () => {

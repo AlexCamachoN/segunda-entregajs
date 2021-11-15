@@ -1,0 +1,31 @@
+{
+    "liquidacion": [{
+            "id": 1,
+            "foto": "img/mujicam.jpg",
+            "nombre": "mujica",
+            "fichatecnica": "oleo/lienzo",
+            "medidas": "50 x 50cm",
+            "precioliquidacion": 500,
+            "precioanterior": 700
+        },
+        {
+            "id": 2,
+            "foto": "img/mujicam.jpg",
+            "nombre": "mujica",
+            "fichatecnica": "oleo/lienzo",
+            "medidas": "50 x 50cm",
+            "precioliquidacion": 500,
+            "precioanterior": 700
+        },
+        {
+            "id": 3,
+            "foto": "img/mujicam.jpg",
+            "nombre": "mujica",
+            "fichatecnica": "oleo/lienzo",
+            "medidas": "50 x 50cm",
+            "precioliquidacion": 500,
+            "precioanterior": 700
+        }
+
+    ]
+}
