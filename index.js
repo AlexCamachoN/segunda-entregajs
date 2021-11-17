@@ -2,6 +2,33 @@
 //para leer la data desde api.json se usa el Fetch
 
 
+$(document).ready(function() {
+    $("#galeria_art").css({ background: 'turquoise', color: 'white' });
+    $("#dscto_cincuenta").css({ background: 'turquoise', color: 'white' });
+    $("#boton").prepend("<button class='btn btn-warning' id='btnSuscrip'>Suscribete para coleccionar Arte</button>");
+    $("#btnSuscrip").click(function() {
+        suscribir();
+    })
+    renderizarProductos()
+    liquidacionProductos()
+
+    //slector para ordenar , va aqui(en document ready) porque hace modificacion sobre el dom
+    $("#miSeleccion").on('change', function() {
+        ordenar();
+    });
+
+    //MARCAR COMO ATRIBUTO PAFA FILTRAR
+    $("#miSeleccion option[value='pordefecto']").attr("selected", true);
+});
+
+//eventos de boton usando fadein
+$("#muestraParrafo").click(function() {
+    $("#parrafo").fadeIn("slow");
+});
+
+
+
+
 // const cards = document.getElementById('cards')
 const cards = document.getElementById('cards') //id cards se encuentra en index.html
 const items = document.getElementById('items')
@@ -23,10 +50,73 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+
+//------------falta  integrarlo
+//esta funcion permite hcer un evento cuando le das click al boton comprar
+//funcion agregar al carrito de zona de propusta artistica
+function agregarAlCarrito(productoNuevo) {
+    carrito.push(productoNuevo);
+    console.log(carrito);
+    Swal.fire(
+        'Excelente Elección! agregada a tu coleccion',
+
+        productoNuevo.nombre,
+        'success'
+
+    );
+}
+
 //boton ver obras con liquidacion
 // document.querySelector('#liquid').addEventListener('click', function() {
 //     datoLiqui();
 // })
+
+
+//funcion para empezar una subscribir
+function suscribir() {
+    $("#suscripcion").append(`
+    <h4>Suscribete a nuestra Galeria de arte</h4>
+    <form id="miFormulario">
+    <input type="text" id="email" placeholder="Aqui tu email">
+    <button type="submit" class="btn btn-warning">Suscribete ahora</button>
+    </form>`);
+    //EVENTO
+    $("#miFormulario").submit(function(e) {
+        //prevenir el comportamiento por defecto
+        e.preventDefault();
+        //aca una buena validacion de los campos
+        //Mensaje de confirmacion de suscripcion
+        Swal.fire(
+            'Nueva suscripción! empieza en el mundo del arte',
+            $("#email").val(),
+            'success'
+        )
+        $("#suscripcion").empty(); //para vaciar ese div, logra desaparecer lo renderizado
+    });
+}
+
+
+//----------falta integrarlo
+//empieza la funcion para ordenar -Filtrar
+//NO LOGRO VINCULARLO
+function ordenar() {
+    let seleccion = $("#miSeleccion").val();
+    //console.log(seleccion);
+    if (seleccion == "menor") {
+        //ordeno el array de productos por precio de menor a mayor
+        data.sort(function(a, b) { return a.precio - b.precio });
+    } else if (seleccion == "mayor") {
+        //ordeno el array de productos por precio de mayor a menor
+        data.sort(function(a, b) { return b.precio - a.precio });
+    } else if (seleccion == "alfabetico") {
+        //ordeno por orden alfabetico
+        data.sort(function(a, b) {
+            return a.nombre.localeCompare(b.nombre);
+        });
+    }
+    $("li").remove();
+    renderizarProductos();
+}
 
 
 
@@ -89,7 +179,6 @@ const pintarCards = data => {
         fragment.appendChild(clone)
     });
     cards.appendChild(fragment)
-
 }
 
 
@@ -101,6 +190,7 @@ const addCarrito = e => {
         setCarrito(e.target.parentElement)
     }
     e.stopPropagation() //para detener otro evento que se genera en EL  cards
+
 }
 
 //--------------MANIPULE EL OBJETO DEL CARRO con setCarrito------
