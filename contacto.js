@@ -1,6 +1,6 @@
 //-------------para formulario
 $(document).ready(function() {
-    $("#contac").css({ background: 'purple', color: 'white' }); //titulo contactame
+    $("#contac").css({ background: 'turquoise', color: 'white' }); //titulo contactame
 });
 
 const $form = document.querySelector('#form')
