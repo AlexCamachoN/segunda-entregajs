@@ -13,4 +13,9 @@ function handleSubmit(event) {
     const form = new FormData(this)
     $buttonMailto.setAttribute('href', `mailto:cnalex_2@hotmail.com?subject=nombre ${form.get('name')}  correo ${form.get('email')}&body=${form.get('message')}`)
     $buttonMailto.click()
+    Swal.fire(
+        'Gracias por ponerte en contacto!',
+        'success'
+
+    );
 }
