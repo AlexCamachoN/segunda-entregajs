@@ -140,7 +140,7 @@ $("#miBoton").click(() => {
                 <h3>${obra.nombre}</h3>
                 <p>${obra.precioliquidacion}</p>
                 <img src=${obra.foto} width="250" height="250">
-                <img>${obra.foto}</img>
+                
                 </div>`);
             }
         }

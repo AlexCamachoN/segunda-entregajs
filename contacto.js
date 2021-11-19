@@ -1,4 +1,4 @@
-//-------------para formulario
+//--------------------------para formulario--------------------------------
 $(document).ready(function() {
     $("#contac").css({ background: 'turquoise', color: 'white' }); //titulo contactame
 });

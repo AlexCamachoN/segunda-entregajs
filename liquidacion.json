@@ -1,8 +1,8 @@
 {
     "liquidacion": [{
             "id": 1,
-            "foto": "img/mujicam.jpg",
-            "nombre": "mujica",
+            "foto": "img/caballom.jpg",
+            "nombre": "caballo",
             "fichatecnica": "oleo/lienzo",
             "medidas": "50 x 50cm",
             "precioliquidacion": 500,
@@ -10,8 +10,8 @@
         },
         {
             "id": 2,
-            "foto": "img/mujicam.jpg",
-            "nombre": "mujica",
+            "foto": "img/desnudo.jpg",
+            "nombre": "desnudo",
             "fichatecnica": "oleo/lienzo",
             "medidas": "50 x 50cm",
             "precioliquidacion": 500,
@@ -19,8 +19,8 @@
         },
         {
             "id": 3,
-            "foto": "img/mujicam.jpg",
-            "nombre": "mujica",
+            "foto": "img/marina.jpg",
+            "nombre": "marina",
             "fichatecnica": "oleo/lienzo",
             "medidas": "50 x 50cm",
             "precioliquidacion": 500,
