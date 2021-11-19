@@ -243,6 +243,12 @@ const pintarCarrito = () => {
 
     //pintar footer
     pintarFooter()
+    Swal.fire(
+        'excelente eleccion! Obra original',
+
+        'success'
+
+    );
 
     localStorage.setItem('carrito', JSON.stringify(carrito))
 }
@@ -273,13 +279,14 @@ const pintarFooter = () => {
     //---vaciamos el carrito mediante funcion btnVaciar,asignamos el evento click
     const btnVaciar = document.getElementById('vaciar-carrito')
     btnVaciar.addEventListener('click', () => {
+
+        carrito = {}
+        pintarCarrito()
         Swal.fire(
             'Gracias por tu compra! vuelve pronto',
             'success'
 
         );
-        carrito = {}
-        pintarCarrito()
     })
 
 }
