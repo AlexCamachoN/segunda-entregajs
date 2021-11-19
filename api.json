@@ -31,7 +31,7 @@
         "foto": "img/campesinae.jpg"
     },
     {
-        "precio": "No disponible",
+        "precio": 100,
         "id": 6,
         "title": "Caballo",
         "foto": "img/mujicam.jpg"

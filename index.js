@@ -8,17 +8,17 @@ $(document).ready(function() {
     $("#boton").prepend("<button class='btn btn-warning' id='btnSuscrip'>Suscribete para coleccionar Arte</button>");
     $("#btnSuscrip").click(function() {
         suscribir();
-    })
-    renderizarProductos()
-    liquidacionProductos()
+    });
+    renderizarProductos();
+    liquidacionProductos();
 
     //slector para ordenar , va aqui(en document ready) porque hace modificacion sobre el dom
     $("#miSeleccion").on('change', function() {
         ordenar();
     });
 
-    //MARCAR COMO ATRIBUTO PAFA FILTRAR
-    $("#miSeleccion option[value='pordefecto']").attr("selected", true);
+    //MARCAR COMO ATRIBUTO PARA FILTRAR
+    // $("#miSeleccion option[value='pordefecto']").attr("selected", true);
 });
 
 //eventos de boton usando fadein
@@ -30,14 +30,17 @@ $("#muestraParrafo").click(function() {
 
 
 // const cards = document.getElementById('cards')
-const cards = document.getElementById('cards') //id cards se encuentra en index.html
-const items = document.getElementById('items')
-const footer = document.getElementById('footer')
+const cards = document.getElementById('cards'); //id cards se encuentra en index.html
+const items = document.getElementById('items');
+const footer = document.getElementById('footer');
 const templateCard = document.getElementById('template-card').content //accedemos al template-card
 const templateFooter = document.getElementById('template-footer').content
 const templateCarrito = document.getElementById('template-carrito').content
 const fragment = document.createDocumentFragment()
 let carrito = {} //objetp vacio
+
+
+
 
 // Eventos
 // El evento DOMContentLoaded es disparado cuando el documento HTML ha sido completamente cargado y parseado
@@ -54,17 +57,17 @@ document.addEventListener('DOMContentLoaded', () => {
 //------------falta  integrarlo
 //esta funcion permite hcer un evento cuando le das click al boton comprar
 //funcion agregar al carrito de zona de propusta artistica
-function agregarAlCarrito(productoNuevo) {
-    carrito.push(productoNuevo);
-    console.log(carrito);
-    Swal.fire(
-        'Excelente Elección! agregada a tu coleccion',
+// function agregarAlCarrito(productoNuevo) {
+//     carrito.push(productoNuevo);
+//     console.log(carrito);
+//     Swal.fire(
+//         'Excelente Elección! agregada a tu coleccion',
 
-        productoNuevo.nombre,
-        'success'
+//         productoNuevo.nombre,
+//         'success'
 
-    );
-}
+//     );
+// }
 
 //boton ver obras con liquidacion
 // document.querySelector('#liquid').addEventListener('click', function() {
@@ -99,24 +102,25 @@ function suscribir() {
 //----------falta integrarlo
 //empieza la funcion para ordenar -Filtrar
 //NO LOGRO VINCULARLO
-function ordenar() {
-    let seleccion = $("#miSeleccion").val();
-    //console.log(seleccion);
-    if (seleccion == "menor") {
-        //ordeno el array de productos por precio de menor a mayor
-        data.sort(function(a, b) { return a.precio - b.precio });
-    } else if (seleccion == "mayor") {
-        //ordeno el array de productos por precio de mayor a menor
-        data.sort(function(a, b) { return b.precio - a.precio });
-    } else if (seleccion == "alfabetico") {
-        //ordeno por orden alfabetico
-        data.sort(function(a, b) {
-            return a.nombre.localeCompare(b.nombre);
-        });
-    }
-    $("li").remove();
-    renderizarProductos();
-}
+
+// function ordenar() {
+//     let seleccion = $("#miSeleccion").val();
+//     //console.log(seleccion);
+//     if (seleccion == "menor") {
+//         //ordeno el array de productos por precio de menor a mayor
+//         apiJSON.sort(function(a, b) { return a.precio - b.precio });
+//     } else if (seleccion == "mayor") {
+//         //ordeno el array de productos por precio de mayor a menor
+//         apiJSON.sort(function(a, b) { return b.precio - a.precio });
+//     } else if (seleccion == "alfabetico") {
+//         //ordeno por orden alfabetico
+//         apiJSON.sort(function(a, b) {
+//             return a.nombre.localeCompare(b.nombre);
+//         });
+//     }
+//     $("li").remove();
+//     renderizarProductos();
+// }
 
 
 
@@ -177,7 +181,13 @@ const pintarCards = data => {
         templateCard.querySelector('.btn-dark').dataset.id = producto.id
         const clone = templateCard.cloneNode(true)
         fragment.appendChild(clone)
+        Swal.fire(
+            'Gracias por tu compra! vuelve pronto',
+            'success'
+
+        );
     });
+
     cards.appendChild(fragment)
 }
 
@@ -193,9 +203,10 @@ const addCarrito = e => {
 
 }
 
+
 //--------------MANIPULE EL OBJETO DEL CARRO con setCarrito------
 const setCarrito = objeto => { //cuando se va seleccionando esta funcion va empujando al carrito
-    console.log(objeto) //captura en consola
+    // console.log(objeto) //captura en consola
     const producto = {
         id: objeto.querySelector('.btn-dark').dataset.id,
         title: objeto.querySelector('h5').textContent,
@@ -247,7 +258,6 @@ const pintarFooter = () => {
         return
     }
 
-
     //--aqui vamos acumulando el total del carrito
     const nCantidad = Object.values(carrito).reduce((acc, { cantidad }) => acc + cantidad, 0)
     const nPrecio = Object.values(carrito).reduce((acc, { cantidad, precio }) => acc + cantidad * precio, 0)
@@ -260,9 +270,14 @@ const pintarFooter = () => {
     fragment.appendChild(clone)
     footer.appendChild(fragment)
 
-    //---vaciamos el corrito mediante funcion btnVaciar,asignamos el evento click
+    //---vaciamos el carrito mediante funcion btnVaciar,asignamos el evento click
     const btnVaciar = document.getElementById('vaciar-carrito')
     btnVaciar.addEventListener('click', () => {
+        Swal.fire(
+            'Gracias por tu compra! vuelve pronto',
+            'success'
+
+        );
         carrito = {}
         pintarCarrito()
     })
@@ -296,3 +311,7 @@ const btnAumentarDisminuir = e => {
     e.stopPropagation()
 
 }
+
+// function comprarButtonClicked({
+//     btnVaciar.innerHTML = '';
+// })
