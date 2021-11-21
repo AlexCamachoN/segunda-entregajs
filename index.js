@@ -1,24 +1,32 @@
 //El array de objetos (base de dato)esta en api.json
 //para leer la data desde api.json se usa el Fetch
-
+let datos = [];
 
 $(document).ready(function() {
     $("#galeria_art").css({ background: 'turquoise', color: 'white' });
     $("#dscto_cincuenta").css({ background: 'turquoise', color: 'white' });
-    $("#boton").prepend("<button class='btn btn-warning' id='btnSuscrip'>Suscribete para coleccionar Arte</button>");
+    $("#boton").prepend("<button class='btn btn-warning' id='btnSuscrip'>Suscribete a nuestra galeria de arte</button>");
+    var estaOculto = false;
     $("#btnSuscrip").click(function() {
+        if (estaOculto) {
+            $("#btnSuscrip").show();
+            estaOculto = false;
+        } else {
+            $("#btnSuscrip").hide();
+            estaOculto = true;
+        }
         suscribir();
     });
-    renderizarProductos();
-    liquidacionProductos();
+    // renderizarProductos();
+    // liquidacionProductos();
 
     //slector para ordenar , va aqui(en document ready) porque hace modificacion sobre el dom
     $("#miSeleccion").on('change', function() {
         ordenar();
     });
 
-    //MARCAR COMO ATRIBUTO PARA FILTRAR
-    // $("#miSeleccion option[value='pordefecto']").attr("selected", true);
+    // //MARCAR COMO ATRIBUTO PARA FILTRAR
+    $("#miSeleccion option[ordenar='pordefecto']").attr("selected", true);
 });
 
 //eventos de boton usando fadein
@@ -54,21 +62,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-//------------falta  integrarlo
-//esta funcion permite hcer un evento cuando le das click al boton comprar
-//funcion agregar al carrito de zona de propusta artistica
-// function agregarAlCarrito(productoNuevo) {
-//     carrito.push(productoNuevo);
-//     console.log(carrito);
-//     Swal.fire(
-//         'Excelente Elección! agregada a tu coleccion',
-
-//         productoNuevo.nombre,
-//         'success'
-
-//     );
-// }
-
 //boton ver obras con liquidacion
 // document.querySelector('#liquid').addEventListener('click', function() {
 //     datoLiqui();
@@ -103,24 +96,24 @@ function suscribir() {
 //empieza la funcion para ordenar -Filtrar
 //NO LOGRO VINCULARLO
 
-// function ordenar() {
-//     let seleccion = $("#miSeleccion").val();
-//     //console.log(seleccion);
-//     if (seleccion == "menor") {
-//         //ordeno el array de productos por precio de menor a mayor
-//         apiJSON.sort(function(a, b) { return a.precio - b.precio });
-//     } else if (seleccion == "mayor") {
-//         //ordeno el array de productos por precio de mayor a menor
-//         apiJSON.sort(function(a, b) { return b.precio - a.precio });
-//     } else if (seleccion == "alfabetico") {
-//         //ordeno por orden alfabetico
-//         apiJSON.sort(function(a, b) {
-//             return a.nombre.localeCompare(b.nombre);
-//         });
-//     }
-//     $("li").remove();
-//     renderizarProductos();
-// }
+function ordenar() {
+    let seleccion = $("#miSeleccion").change(ordenar);
+    //console.log(seleccion);
+    if (seleccion == "menor") {
+        //ordeno el array de productos por precio de menor a mayor
+        datos.sort(function(a, b) { return a.precio - b.precio });
+    } else if (seleccion == "mayor") {
+        //ordeno el array de productos por precio de mayor a menor
+        datos.sort(function(a, b) { return b.precio - a.precio });
+    } else if (seleccion == "alfabetico") {
+        //ordeno por orden alfabetico
+        datos.sort(function(a, b) {
+            return a.title.localeCompare(b.title);
+        });
+    }
+    $("li").remove();
+    renderizarProductos();
+}
 
 
 
@@ -172,6 +165,7 @@ const fetchData = async() => {
 }
 
 // Pintar productos que estan en template-card - funcion pintarCards con forEach
+// document.innerHTML = pintarCards; ????????????????
 const pintarCards = data => {
     data.forEach(producto => {
         templateCard.querySelector('h5').textContent = producto.title
@@ -181,15 +175,14 @@ const pintarCards = data => {
         templateCard.querySelector('.btn-dark').dataset.id = producto.id
         const clone = templateCard.cloneNode(true)
         fragment.appendChild(clone)
-        Swal.fire(
-            'Gracias por tu compra! vuelve pronto',
-            'success'
-
-        );
     });
+
+
 
     cards.appendChild(fragment)
 }
+
+
 
 
 //-------------AGREGAR AL CARRO------------------
@@ -199,6 +192,12 @@ const addCarrito = e => {
     if (e.target.classList.contains('btn-dark')) {
         setCarrito(e.target.parentElement)
     }
+    //--------SI AGREGO AQUI , CUANDO DOY CLICK EN CUALQUIER PARTE DEL DOM SALTA EL CLICK...PORQUE?
+    // Swal.fire(
+    //     'Excelente obra adquirida!',
+    //     'success'
+
+    // );
     e.stopPropagation() //para detener otro evento que se genera en EL  cards
 
 }
@@ -243,12 +242,12 @@ const pintarCarrito = () => {
 
     //pintar footer
     pintarFooter()
-    Swal.fire(
-        'excelente eleccion! Obra original',
+        // Swal.fire(
+        //     'excelente eleccion! Obra original',
 
-        'success'
+    //     'success'
 
-    );
+    // );
 
     localStorage.setItem('carrito', JSON.stringify(carrito))
 }
