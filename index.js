@@ -8,13 +8,14 @@ $(document).ready(function() {
     $("#boton").prepend("<button class='btn btn-warning' id='btnSuscrip'>Suscribete a nuestra galeria de arte</button>");
     var estaOculto = false;
     $("#btnSuscrip").click(function() {
-        if (estaOculto) {
-            $("#btnSuscrip").show();
-            estaOculto = false;
-        } else {
-            $("#btnSuscrip").hide();
-            estaOculto = true;
-        }
+        $('#btnSuscrip').hide();
+        // if (estaOculto) {
+        //     $("#btnSuscrip").show();
+        //     estaOculto = false;
+        // } else {
+        //     $("#btnSuscrip").hide();
+        //     estaOculto = true;
+        // }
         suscribir();
     });
 
@@ -75,6 +76,7 @@ function suscribir() {
             'success'
         )
         $("#suscripcion").empty(); //para vaciar ese div, logra desaparecer lo renderizado
+        $("#btnSuscrip").show();
     });
 }
 
